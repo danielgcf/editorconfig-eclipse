@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="EditorConfig Category"
+            id="editorconfig-eclipse.commands.category">
+      </category>
+      <command
+            name="Load File"
+            categoryId="editorconfig-eclipse.commands.category"
+            id="editorconfig-eclipse.commands.loadFileCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="editorconfig-eclipse.commands.loadFileCommand"
+            class="org.plugin.editorconfigeclipse.handlers.LoadFileHandler">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="editorconfig-eclipse.commands.loadFileCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               label="EditorConfig"
+               mnemonic="M"
+               id="editorconfig-eclipse.menus.editorConfigMenu">
+            <command
+                  commandId="editorconfig-eclipse.commands.loadFileCommand"
+                  mnemonic="S"
+                  id="editorconfig-eclipse.menus.editorConfigCommand">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="editorconfig-eclipse.toolbars.editorConfigToolbar">
+            <command
+                  commandId="editorconfig-eclipse.commands.loadFileCommand"
+                  icon="icons/editorconfig.gif"
+                  tooltip="Say hello world"
+                  id="editorconfig-eclipse.toolbars.editorConfigCommand">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+   </extension>
+
+</plugin>

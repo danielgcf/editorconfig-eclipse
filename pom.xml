@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.editorconfig-eclipse</groupId>
+	<artifactId>editorconfig-eclipse</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>eclipse-plugin</packaging>
+	<repositories>
+		<repository>
+			<id>helios</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/helios</url>
+		</repository>
+	</repositories>
+	<dependencies />
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>0.22.0</version>
+				<extensions>true</extensions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
