@@ -19,7 +19,26 @@ public enum ConfigProperty {
 		public String parse(String editorConfigProperyValue) {
 			return editorConfigProperyValue;
 		}
+	},
+	END_OF_LINE("end_of_line", "line.separator", EclipsePreferenceNode.CORE_RUNTIME) {
+		@Override
+		public String parse(String editorConfigProperyValue) {
+			if ("cr".equalsIgnoreCase(editorConfigProperyValue)) return "\r";
+			if ("lf".equalsIgnoreCase(editorConfigProperyValue)) return "\n";
+			if ("crlf".equalsIgnoreCase(editorConfigProperyValue)) return "\r\n";
+			return "\r\n";
+		}
+	},
+	CHARSET("charset", "encoding", EclipsePreferenceNode.CORE_RESOURCES) {
+		@Override
+		public String parse(String editorConfigProperyValue) {
+			if (editorConfigProperyValue != null)
+				editorConfigProperyValue = editorConfigProperyValue.toUpperCase();
+			return editorConfigProperyValue;
+		}
 	};
+	
+	
 	
 	ConfigProperty(String editorconfig, String eclipse, EclipsePreferenceNode eclipsePreferenceNode) {
 		this.editorconfig = editorconfig;
