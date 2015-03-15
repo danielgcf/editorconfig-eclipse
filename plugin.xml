@@ -52,7 +52,7 @@
             <command
                   commandId="editorconfig-eclipse.commands.loadFileCommand"
                   icon="icons/editorconfig.gif"
-                  tooltip="Say hello world"
+                  tooltip="Load editorconfig"
                   id="editorconfig-eclipse.toolbars.editorConfigCommand">
             </command>
          </toolbar>
@@ -60,6 +60,9 @@
    </extension>
    <extension
          point="org.eclipse.core.runtime.preferences">
+   </extension>
+   <extension
+         point="org.eclipse.core.resources.builders">
    </extension>
 
 </plugin>
