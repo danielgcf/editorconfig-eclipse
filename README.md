@@ -1,12 +1,20 @@
 # editorconfig-eclipse
 
-Place the .editorconfig file at the workspace-project
+#Download the repository, and import it as MAVEN project:
 
-Download the code and install locally
+Open eclipse and choose the workspace repository (it is the folder where goes the .editorconfig
 
-Rigth Click on the project -> Export -> Deployable Plug-ins and fragments -> "Instal into host. Repository"
+File -> Import -> Existing Maven Project.
 
-After restart there will be a Menu "EditorConfig" on the top.
+In the Root Directory open the folder the download repository
+
+Place the .editorconfig file at the workspace-project (the folder that eclipse ask when it opens)
+
+#Install locally as Plugin
+
+Rigth Click on the project -> Export -> Deployable Plug-ins and fragments -> "Instal into host. Repository" -> Finish
+
+After restart there will be a Menu "EditorConfig" on the top of eclipse.
 
 Supports:
 indent_style
