@@ -93,17 +93,17 @@ public class EditorConfig {
     Map<String, String> options = new LinkedHashMap<String, String>();
     try {
       boolean root = false;
-      // TODO: Change to AbsolutePath
+      // TODO: Changed from original to AbsolutePath
       String dir = new File(filePath).getAbsolutePath();
       while (dir != null && !root) {
-    	  // TODO: Change to File.Separator
+    	  // TODO: Changed from original to Cross compability (Windows wasn't work)
         String configPath = dir + File.separator + configFilename;
         if (new File(configPath).exists()) {
           FileInputStream stream = new FileInputStream(configPath);
           InputStreamReader reader = new InputStreamReader(stream, "UTF-8");
           BufferedReader bufferedReader = new BufferedReader(reader);
           try {
-        	  // TODO: Change to File.Separator
+            // TODO: Changed from original to Cross compability (Windows wasn't work)
             root = parseFile(bufferedReader, dir + File.separator, filePath, options);
           } finally {
             bufferedReader.close();
@@ -111,7 +111,7 @@ public class EditorConfig {
             stream.close();
           }
         } else {
-        	//TODO: FilenotfoundE
+     	// TODO: Changed from original to throw exception when file is not found.
         	throw new FileNotFoundException();
         }
         options.putAll(oldOptions);
@@ -234,9 +234,9 @@ public class EditorConfig {
   }
 
   static boolean filenameMatches(String configDirname, String pattern, String filePath) {
-	  //TODO: Change to do
-	  filePath =  filePath.replaceAll("\\\\", "/");
-	  
+    // TODO: Changed from original to Cross compability (Windows wasn't work)
+    filePath =  filePath.replaceAll("\\\\", "/");
+
     pattern = pattern.replace(File.separatorChar, '/');
     pattern = pattern.replaceAll("\\\\#", "#");
     pattern = pattern.replaceAll("\\\\;", ";");
