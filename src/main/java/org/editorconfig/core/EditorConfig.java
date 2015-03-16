@@ -20,6 +20,7 @@ import java.util.regex.Pattern;
  * EditorConfig handler
  *
  * @author Dennis.Ushakov
+ * {@link https://github.com/editorconfig/editorconfig-core-java}
  */
 public class EditorConfig {
   private static boolean DEBUG = System.getProperty("editorconfig.debug") != null;

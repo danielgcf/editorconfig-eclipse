@@ -5,6 +5,7 @@ package org.editorconfig.core;
  * invalid version number is specified
  *
  * @author Dennis.Ushakov
+ * {@link https://github.com/editorconfig/editorconfig-core-java}
  */
 public class VersionException extends EditorConfigException {
 

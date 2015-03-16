@@ -6,6 +6,7 @@ import java.io.IOException;
  * The base class of all EditorConfig exceptions
  *
  * @author Dennis.Ushakov
+ * {@link https://github.com/editorconfig/editorconfig-core-java}
  */
 public class EditorConfigException extends Exception {
 	private static final long serialVersionUID = -6989884482075940375L;

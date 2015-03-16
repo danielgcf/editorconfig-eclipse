@@ -7,6 +7,7 @@ import java.io.IOException;
  * EditorConfig file could not be parsed
  *
  * @author Dennis.Ushakov
+ * {@link https://github.com/editorconfig/editorconfig-core-java}
  */
 public class ParsingException extends EditorConfigException {
 
