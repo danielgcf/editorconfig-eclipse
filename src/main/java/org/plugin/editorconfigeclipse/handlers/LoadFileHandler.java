@@ -1,7 +1,6 @@
 package org.plugin.editorconfigeclipse.handlers;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,11 +39,6 @@ public class LoadFileHandler extends AbstractHandler {
 			setEclipseProperties(editorConfigProperties);
 			flushAll();
 			message = "Done!";
-		} catch (EditorConfigException e) {
-			message = "Error during loading: " + e.getCause();
-			if (e.getCause() instanceof FileNotFoundException) {
-				message = "File not found!";
-			}
 		} catch (Exception e) {
 			message = "Error during loading: ";
 			if (e.getMessage() != null)
@@ -80,14 +74,12 @@ public class LoadFileHandler extends AbstractHandler {
 			throws EditorConfigException {
 		String editorConfigProperyValue = null;
 		for (ConfigProperty configProperty : ConfigProperty.values()) {
-			editorConfigProperyValue = editorConfigProperties
-					.get(configProperty.getEditorconfig());
-			editorConfigProperyValue = configProperty
-					.parse(editorConfigProperyValue);
-			InstanceScope.INSTANCE.getNode(
-					configProperty.getEclipsePreferenceNode()
-							.getPreference()).put(
-					configProperty.getEclipse(), editorConfigProperyValue);
+			editorConfigProperyValue = editorConfigProperties.get(configProperty.getEditorconfig());
+			if (editorConfigProperyValue == null || editorConfigProperyValue.trim().isEmpty())
+				continue;
+			editorConfigProperyValue = configProperty.parse(editorConfigProperyValue);
+			InstanceScope.INSTANCE.getNode(configProperty.getEclipsePreferenceNode()
+							.getPreference()).put(configProperty.getEclipse(), editorConfigProperyValue);
 		}
 	}
 

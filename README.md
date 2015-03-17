@@ -1,5 +1,11 @@
 # editorconfig-eclipse
 
+#Import in dropins
+
+Go to the release tab and get the .jar file.
+
+Copy it on the eclipse/dropins folder
+
 #Download the repository, and import it as MAVEN project:
 
 Open eclipse and choose the workspace repository (it is the folder where goes the .editorconfig

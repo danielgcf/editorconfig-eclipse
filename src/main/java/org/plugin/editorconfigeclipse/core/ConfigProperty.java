@@ -63,8 +63,6 @@ public enum ConfigProperty {
 		}
 	};
 
-
-
 	ConfigProperty(String editorconfig, String eclipse, EclipsePreferenceNode eclipsePreferenceNode) {
 		this.editorconfig = editorconfig;
 		this.eclipse = eclipse;
